@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homePageFragment">
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.ichef.home.HomePageFragment"
+        android:label="home page"
+        tools:layout="@layout/fragment_home_page">
+        <action
+            android:id="@+id/action_homePageFragment_to_postAddFragment"
+            app:destination="@id/postAddFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/postAddFragment"
+        android:name="com.example.ichef.post.PostAddFragment"
+        android:label="add"
+        tools:layout="@layout/fragment_post_add">
+        <action
+            android:id="@+id/action_postAddFragment_to_homePageFragment2"
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/nav_graph" />
+    </fragment>
+    <fragment
+        android:id="@+id/postDetailsFragment"
+        android:name="com.example.ichef.post.PostDetailsFragment"
+        android:label="details"
+        tools:layout="@layout/fragment_post_details">
+        <action
+            android:id="@+id/action_postDetailsFragment_to_postEditFragment"
+            app:destination="@id/postEditFragment" />
+        <argument
+            android:name="postId"
+            app:argType="string" />
+    </fragment>
+    <action android:id="@+id/action_global_homePageFragment" app:destination="@id/homePageFragment" />
+    <action android:id="@+id/action_global_postAddFragment" app:destination="@id/postAddFragment" />
+    <fragment
+        android:id="@+id/postEditFragment"
+        android:name="com.example.ichef.post.PostEditFragment"
+        android:label="edit post"
+        tools:layout="@layout/fragment_post_edit">
+        <argument
+            android:name="postId"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/profilePageFragment"
+        android:name="com.example.ichef.profile.ProfilePageFragment"
+        android:label="Profile page"
+        tools:layout="@layout/fragment_profile_page">
+        <action
+            android:id="@+id/action_profilePageFragment_to_postAddFragment"
+            app:destination="@id/postAddFragment" />
+        <action
+            android:id="@+id/action_profilePageFragment_to_profileEdit"
+            app:destination="@id/profileEdit" />
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_profilePageFragment_to_postDetailsFragment"
+            app:destination="@id/postDetailsFragment" />
+    </fragment>
+    <action android:id="@+id/action_global_profilePageFragment" app:destination="@id/profilePageFragment" />
+    <fragment
+        android:id="@+id/profileEdit"
+        android:name="com.example.ichef.profile.ProfileEditFragment"
+        android:label="edit profile"
+        tools:layout="@layout/fragment_profile_edit">
+        <argument
+            android:name="name"
+            app:argType="string" />
+    </fragment>
+</navigation>
