@@ -6,6 +6,8 @@ buildscript {
         mavenCentral()
     }
     dependencies {
+        classpath "com.android.tools.build:gradle:7.0.3"
+
         classpath 'com.google.gms:google-services:4.3.15'
         def nav_version = "2.5.3"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
@@ -17,9 +19,13 @@ plugins {
     id 'com.android.library' version '7.3.1' apply false
 }
 
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
 allprojects {
     repositories {
-            google()
+        google()
         mavenCentral()
     }
 }

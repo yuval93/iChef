@@ -126,7 +126,7 @@ public class PostAddFragment extends Fragment {
             Toast toast = new Toast(getContext());
             View popupView = LayoutInflater.from(getContext()).inflate(R.layout.popup_window, null);
             TextView toastText = popupView.findViewById(R.id.popup_text_tv);
-            toastText.setText("You didn't enter Title/Location");
+            toastText.setText("You didn't enter Title/Info");
             toastText.setTextSize(20);
             toast.setView(popupView);
             toast.setDuration(Toast.LENGTH_SHORT);

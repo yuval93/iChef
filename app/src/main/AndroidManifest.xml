@@ -13,7 +13,8 @@
         android:theme="@style/Theme.iChef"
         android:usesCleartextTraffic="true"
         android:configChanges="orientation|screenSize"
-        tools:ignore="MissingClass">
+        tools:ignore="ExtraText,MissingClass">
+
         <activity
             android:name=".login.LoginActivity"
             android:exported="false" />

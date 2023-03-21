@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
 import android.util.Log;
@@ -91,7 +92,7 @@ public class PostDetailsFragment extends Fragment {
             progressBar.setVisibility(View.GONE);
         });
 
-        editBtn.setOnClickListener(v -> Navigation.findNavController(v).navigate(PostDetailsFragmentDirections.actionPostDetailsFragmentToPostEditFragment(postId)));
+        editBtn.setOnClickListener(v -> Navigation.findNavController(v).navigate((NavDirections) PostDetailsFragmentDirections.actionPostDetailsFragmentToPostEditFragment(postId)));
 
         deleteBtn.setOnClickListener(v -> Model.instance.deletePost(p, () -> {
             Toast toast = new Toast(getContext());
